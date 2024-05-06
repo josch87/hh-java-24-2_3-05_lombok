@@ -1,10 +1,11 @@
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Value;
 
 import java.util.Set;
 
-@Data
+@Value
 @AllArgsConstructor
 @Builder
 public class Course {
