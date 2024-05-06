@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 import java.util.Set;
 
 public class Main {
@@ -10,6 +11,7 @@ public class Main {
 
         jonas.setId(2);
         jonas.setName("Jonas");
+        jonas.setGrade(1.5F);
 
         // Static member 'Student.builder()' accessed via instance reference (Funktioniert nicht, es wird nichts geändert)
         goekhan.builder()
@@ -27,11 +29,17 @@ public class Main {
         Teacher florian = new Teacher(1, "Florian", Set.of("Java", "Web") );
         System.out.println(florian);
 
-        Course javaBootcamp = new Course(1, "Java Bootcamp", florian, Set.of(aljoscha, jonas, goekhan,daniel1));
+        Course javaBootcamp = new Course(1, "Java Bootcamp", florian, Set.of(aljoscha, jonas, goekhan, daniel1));
         System.out.println(javaBootcamp);
 
         Teacher florian2 = florian.withSubjects(Set.of("Java", "Web", "Cooking"));
 
         System.out.println(florian2);
+
+        UniversityService universityService = new UniversityService();
+
+        BigDecimal javaBootcampAverageGrade = universityService.calcAverageGrade(javaBootcamp);
+
+        System.out.println(javaBootcampAverageGrade);
     }
 }
