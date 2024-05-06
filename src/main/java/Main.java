@@ -6,7 +6,10 @@ public class Main {
         Student aljoscha = new Student(1, "Aljoscha", "Berlin", 1.0F);
         Student jonas = new Student();
         Student goekhan = new Student();
-        Student daniel = Student.builder().build();
+        Student daniel = Student.builder()
+                .id(4)
+                .grade(2.6F)
+                .build();
         System.out.println(aljoscha);
 
         jonas.setId(2);
@@ -20,13 +23,13 @@ public class Main {
                 .build();
 
         //Static member 'Student.builder()' accessed via instance reference  (Funktioniert, es wird etwas zurückgegeben und weiterverwendet / man sollte jedoch stattdessen @With verwenden)
-        Student daniel1 = daniel.builder().name("Daniel").id(4).build();
+        Student daniel1 = daniel.builder().name("Daniel").build();
 
         System.out.println("daniel1: " + daniel1);
 
         System.out.println("Daniel: " + daniel);
 
-        Teacher florian = new Teacher(1, "Florian", Set.of("Java", "Web") );
+        Teacher florian = new Teacher(1, "Florian", Set.of("Java", "Web"));
         System.out.println(florian);
 
         Course javaBootcamp = new Course(1, "Java Bootcamp", florian, Set.of(aljoscha, jonas, goekhan, daniel1));
