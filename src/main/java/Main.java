@@ -29,5 +29,9 @@ public class Main {
 
         Course javaBootcamp = new Course(1, "Java Bootcamp", florian, Set.of(aljoscha, jonas, goekhan,daniel1));
         System.out.println(javaBootcamp);
+
+        Teacher florian2 = florian.withSubjects(Set.of("Java", "Web", "Cooking"));
+
+        System.out.println(florian2);
     }
 }
