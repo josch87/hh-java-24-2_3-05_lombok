@@ -17,7 +17,7 @@ public class Main {
                 .name("Gökhan")
                 .build();
 
-        //Static member 'Student.builder()' accessed via instance reference  (Funktioniert, es wird etwas zurückgegeben und weiterverwendet)
+        //Static member 'Student.builder()' accessed via instance reference  (Funktioniert, es wird etwas zurückgegeben und weiterverwendet / man sollte jedoch stattdessen @With verwenden)
         Student daniel1 = daniel.builder().name("Daniel").id(4).build();
 
         System.out.println("daniel1: " + daniel1);
