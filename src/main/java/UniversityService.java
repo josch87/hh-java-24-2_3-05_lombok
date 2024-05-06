@@ -13,6 +13,4 @@ public class UniversityService {
 
         return sum.divide(new BigDecimal(students.size()), 2, RoundingMode.HALF_UP);
     }
-
-    ;
 }
